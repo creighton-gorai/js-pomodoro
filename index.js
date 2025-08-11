@@ -1,0 +1,1 @@
+const startEl = document.getElementById("start");
