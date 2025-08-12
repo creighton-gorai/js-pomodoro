@@ -7,7 +7,7 @@ let timeLeft = 1500;
 function updateTimer() {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
-    let formattedTime = `${minutes.toString()}:${seconds.toString()}`;
+    let formattedTime = `${minutes.toString().padStart("2", 0)}:${seconds.toString().padStart("2", 0)}`;
 
     timerEl.innerHTML = formattedTime;
 }
@@ -16,7 +16,7 @@ function startTimer() {
     interval = setInterval(() => {
         timeLeft--;
         updateTimer();
-        if (timeleft == 0) {
+        if (timeLeft == 0) {
             clearInterval(interval);
             alert("Time is Up!");
             timeLeft = 1500;
